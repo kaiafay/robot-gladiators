@@ -12,7 +12,7 @@ var fightOrSkip = function() {
         return fightOrSkip();
     }
 
-    promptFight = promptFight.toLocaleLowerCase();
+    promptFight = promptFight.toLowerCase();
 
     if (promptFight === "skip") {
         var confirmSkip = window.confirm("Are you sure you'd like to quit?");
@@ -29,6 +29,7 @@ var fightOrSkip = function() {
 var fight = function(enemy) {
     // keep track of who goes first
     var isPlayerTurn = true;
+
     if (Math.random() > 0.5) {
         isPlayerTurn = false;
     };
@@ -71,7 +72,7 @@ var fight = function(enemy) {
         }
 
         // switch turn order for next round
-        isPlayerTurn = !isPlayerTurn
+        isPlayerTurn = !isPlayerTurn;
    }
 };
 
@@ -213,15 +214,15 @@ var playerInfo = {
 var enemyInfo = [
     {
         name: "Roborto",
-        attack: 12
+        attack: randomNumber(10, 14)
     },
     {
         name: "Amy Android",
-        attack: 13
+        attack: randomNumber(10, 14)
     },
     {
         name: "Robo Trumble",
-        attack: 14
+        attack: randomNumber(10, 14)
     }
 ];
 
